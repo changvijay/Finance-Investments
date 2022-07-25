@@ -1,0 +1,57 @@
+h1 {
+    color: white;
+}
+
+p {
+    font-size: x-large;
+}
+
+li {
+    font-size: x-large;
+    margin-left: 5%;
+}
+
+body {
+    background-color: #14C38E;
+}
+
+.carousel {
+    height: 500px;
+    margin-top: 0;
+    padding-top: 0;
+    margin: 5%;
+    padding: 10%;
+}
+
+.carousel-item {
+    text-align: center;
+    font-size: 2rem;
+    color: #E3FCBF;
+}
+@media screen and (max-width: 600px){
+    .carousel-item{
+        font-size: large;
+    }
+    .carousel{
+        height: 250px;
+    }
+}
+
+img {
+    border-radius: 10%;
+}
+
+#footer {
+    text-align: center;
+    background-color: black;
+    max-height: 50%;
+    color: white;
+}
+.carousel-control{
+    margin-top: 0;
+    padding-top: 0;
+}
+.color{
+    color: white;
+    
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Trade with Chang </title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i,900,900i"
+        type="text/css" media="all">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <style>
+        body {
+            background-color: #14C38E;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="vijay" href="compound.html">
+        <ion-icon name="bar-chart-sharp"></ion-icon><h6>compound</h6>
+    </a>
+    <a class="vijay" href="thumbrule.html">
+        <ion-icon name="newspaper-outline"></ion-icon><h6>thumbrule</h6>
+    </a>
+    <a class="vijay" href="value.html">
+        <ion-icon name="trending-up-sharp"></ion-icon><h6>live market</h6>
+    </a>
+    <a class="vijay" href="learn.html">
+        <ion-icon name="compass-sharp"></ion-icon><h6>explor</h6>
+    </a>
+    <a class="vijay" href="index.html">
+        <ion-icon name="home-sharp"></ion-icon><h6>home</h6>
+    </a>
+    <br><br><br>
+    <section class="container">
+        <div class="calculator">
+            <div class="heading">
+                <h3>compound Interest calculator</h3>
+                <small>your money grrowrt over time using compound Interest...</small>
+            </div>
+            <form class="compound-form">
+                <div class="input-group">
+                    <label for="initialamount">initial Amount </label>
+                    <input type="number" id="initialamount">
+                </div>
+                <div class="input-group">
+                    <label for="years">investment years</label>
+                    <input type="number" id="years">
+                </div>
+                <div class="input-group">
+                    <label for="rates">estimated rates(%) </label>
+                    <input type="number" id="rates">
+                </div>
+                <div class="input-group">
+                    <label for="rates">compound interval </label>
+                    <select id="compound">
+                        <option value="1">Annual</option>
+                        <option value="4">Quartely</option>
+                        <option value="2">Semiannualy</option>
+                        <option value="12"> Monthly</option>
+                    </select>
+
+
+                </div>
+                <div class="input-group">
+                    <button>Calculator</button>
+                </div>
+            </form>
+        </div>
+        <div class="results">
+            <h3 id="message"></h3>
+            <canvas id="data-set"></canvas>
+        </div>
+    </section>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

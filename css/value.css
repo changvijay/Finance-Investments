@@ -1,0 +1,43 @@
+h1 {
+    color: white;
+}
+h2{
+    text-align: center;
+}
+
+p {
+    font-size: x-large;
+}
+
+li {
+    font-size: x-large;
+    margin-left: 5%;
+}
+
+body {
+    background-color: #14C38E;
+}
+.color{
+    color: white;
+}
+#footer {
+    margin-top: 5%;
+    text-align: center;
+    background-color: black;
+    max-height: 50%;
+    color: white;
+    
+}
+.card{
+    margin: 5%;
+}
+.card-body{
+    font-size: 0.5rem;
+    background-color: aquamarine;
+}
+.up{
+    color: green;
+}
+.down{
+    color: red;
+}

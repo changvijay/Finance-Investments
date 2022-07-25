@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Trade with Chang </title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css\header.css">
+    <link rel="stylesheet" href="css\thumbrule.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <style>
+        body {
+            background-color: #14C38E;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light  ">
+        <a class="navbar-brand mx-auto" href="#">
+            <h1>chang</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ml-auto">
+                <div class="navbar-nav text-light">
+                    <a class="nav-item nav-link active text-light" href="index.html">
+                        <ion-icon name="home-sharp"></ion-icon> Home <span class="sr-only">(current)</span>
+                    </a>
+                    <a class="nav-item nav-link text-light" href="value.html">
+                        <ion-icon name="trending-up-sharp"></ion-icon> live market
+                    </a>
+                    <a class="nav-item nav-link text-light" href="learn.html">
+                        <ion-icon name="compass-sharp"></ion-icon> Explor
+                    </a>
+                    <a class="nav-item nav-link text-light disabled" href="thumbrule.html">
+                        <ion-icon name="newspaper-outline"></ion-icon> Thumbrule
+                    </a>
+                    <a class="nav-item nav-link text-light disabled" href="compound.html">
+                        <ion-icon name="bar-chart-sharp"></ion-icon> compound
+                    </a>
+
+                </div>
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-lg-4">
+            <label style="font-size: x-large;"> Salary :</label><br>
+            <input type="number" id="num" required />
+            <br>
+            <label style="font-size: x-large;" for="home">Home :</label><br>
+            <input type="number" name="home" id="home">
+            <br>
+            <label style="font-size: x-large;" for="food">Food :</label><br>
+            <input type="number" name="food" id="food">
+            <br>
+            <label style="font-size: x-large;" for="education">Education :</label><br>
+            <input type="number" name="education" id="education">
+            <br>
+            <label style="font-size: x-large;" for="saving">Savings :</label><br>
+            <input type="number" name="saving" id="saving">
+            <br>
+            <div class="buttonRight">
+                <button onclick="percentage()">calculate</button>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 bg-light">
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+        </div>
+    </div>
+    <br>
+    <h1 style="text-align: center;">Thumb Rules For Managing Your Salary</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <p> you can allocate 50% of your paycheck to
+                        essentials like
+                        rent</p>
+                    <p id="demo">wants</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+
+                <div class="card">
+                    <p> you can allocate 20% of your paycheck to saving &
+                        investing in assets like mutual funds, stocks etc</p>
+                    <p id="demo1">need</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+
+                <div class="card">
+                    <p> you can allocate 30% of your paycheck to
+                        entertainment &
+                        like dinner dates</p>
+                    <p id="demo2">saving</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function percentage() {
+            var salary = document.getElementById("num").value;
+            document.getElementById("demo").innerHTML = (salary / 100) * 50;
+            document.getElementById("demo1").innerHTML = (salary / 100) * 20;
+            document.getElementById("demo2").innerHTML = (salary / 100) * 30;
+            var home = parseInt(document.getElementById("home").value);
+            var food = parseInt(document.getElementById("food").value);
+            var education = parseInt(document.getElementById("education").value);
+            var saving = parseInt(document.getElementById("saving").value);
+            var other = salary - (home+food+education+saving);
+            var home = (home/salary)*100;
+            var food = (food/salary)*100;
+            var education = (education/salary)*100;
+            var saving = (saving/salary)*100;
+            var other = (other/salary)*100;
+            var xValues = ["other", "home", "food", "education", "saving",""];
+            var yValues = [other,home,food,education,saving,"0"];
+            var barColors = ["red", "green", "blue", "orange", "brown"];
+            console.log(yValues);
+            new Chart("myChart", {
+                type: "bar",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues
+                    }]
+                },
+                options: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: "World Wine Production 2018"
+                    }
+                }
+            });
+        }
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <br>
+    <section id="footer">
+        <h1>That all about why are you waiting just start now with out fear</h1>
+        <h1><br></h1>
+        <hr style="background-color: white;">
+        <a class="vija color" href="https://www.youtube.com/c/CNBC-TV18/videos">
+            <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+        <a class="vija color" href="https://www.instagram.com/chang_vijay/">
+            <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a class="vija color" href="https://twitter.com/chang_vijay_k">
+            <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a class="vija color" href="https://www.facebook.com/chang.vijay">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+
+</html>

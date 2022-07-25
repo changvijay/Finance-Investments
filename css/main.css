@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat",sans-serif;
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: 40px;
+
+}
+
+.calculator {
+    text-align: center;
+    width: 40%;
+    color: #063102;
+}
+
+.heading h3 {
+    font-size: 25px;
+    color: #0c8d00;
+}
+#message {
+    font-size: 25px;
+    color: #0c8d00;
+}
+.input-group {
+    margin: 20px 0;
+}
+.input-group label {
+    display: block;
+}
+
+.input-group input,
+.input-group button,
+.input-group select {
+    width:350px;
+    padding: 12px;
+    border: 1px solid #0c8d00;
+    outline: none;
+    border-radius: 20px;
+}
+.input-group button {
+    background-color: #0c8d00;
+    color: white;
+}
+.results {
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.37);
+    width: 50%;
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+@media screen and (max-width: 1000px){
+    .container {
+        display: inline;
+        width: 100%;
+    }
+    .results{
+        width: 100%;
+        text-align: center;
+    }
+
+    .calculator{
+        width: 100%;
+    }
+    
+    
+}
+a{
+    font-size: 1rem;
+}
+h6{
+    font-size: xx-small;
+}
