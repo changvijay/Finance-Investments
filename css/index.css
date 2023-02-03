@@ -21,6 +21,9 @@ body {
     padding-top: 0;
     margin: 5%;
     padding: 10%;
+    background-color: black;
+    border-radius: 100px;
+    box-shadow: 5px 10px 3 #888888;
 }
 
 .carousel-item {
@@ -35,6 +38,10 @@ body {
     .carousel{
         height: 250px;
     }
+}
+.title{
+    color: white;
+    font-style: oblique;
 }
 
 img {
