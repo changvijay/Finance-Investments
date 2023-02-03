@@ -1,2 +1,6 @@
 # Finance-Investments
-“The No. 1 idea is to view a stock as an ownership of the business and to judge the staying quality of the business in terms of its competitive advantage. Look for more value in terms of discounted future cash-flow than you are paying for. Move only when you have an advantage.”
+-Created an investment guide web page to educate users on various investment options and strategies.
+-Utilized HTML,CSS, and JavaScript 
+-to design anddevelop the page and deployed in github pages
+-the link is
+https://changvijay.github.io/Finance-Investments/index.html
