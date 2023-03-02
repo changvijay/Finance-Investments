@@ -10,6 +10,8 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css\header.css">
     <link rel="stylesheet" href="css\index.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light  ">
@@ -38,6 +40,8 @@
                     <a class="nav-item nav-link text-light disabled" href="compound.html">
                         <ion-icon name="bar-chart-sharp"></ion-icon> compound
                     </a>
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
 
                 </div>
             </ul>
@@ -131,6 +135,20 @@
             <ion-icon name="logo-facebook"></ion-icon>
         </a>
     </section>
+    <script>
+        function onSignIn(googleUser) {
+  // Get the user's ID token and other information.
+  var id_token = googleUser.getAuthResponse().id_token;
+  var profile = googleUser.getBasicProfile();
+  var name = profile.getName();
+  var email = profile.getEmail();
+  
+  // Send the ID token and other information to your server for verification.
+  // ...
+}
+
+    </script><script src="https://apis.google.com/js/platform.js" async defer></script>
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
